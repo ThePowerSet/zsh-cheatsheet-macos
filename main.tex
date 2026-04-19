@@ -1,0 +1,147 @@
+\documentclass[10pt]{article}
+
+\usepackage[a4paper,landscape,margin=1.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{titlesec}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1em}
+\setlength{\columnsep}{1.2cm}
+
+\titleformat{\section}
+  {\Large\bfseries}
+  {}{0pt}{}
+
+\titlespacing*{\section}
+  {0pt}
+  {0pt}
+  {5em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}{0pt}{}
+
+\newcommand{\key}[1]{%
+  \fbox{\raisebox{0pt}[1.05em][0.15em]{\scriptsize\texttt{#1}}}\hspace{0.4em}%
+}
+
+\newcommand{\shortcut}[2]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.40\linewidth}@{\hspace{0.3em}}p{0.56\linewidth}@{}}
+  #1 & #2 \\
+  \end{tabular*}
+  \vspace{0.25em}
+}
+
+\newcommand{\shortcuttext}[2]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.42\linewidth}@{\hspace{0.2em}}p{0.54\linewidth}@{}}
+  \texttt{#1} & #2 \\
+  \end{tabular*}
+  \vspace{0.12em}
+}
+
+\begin{document}
+
+{\Huge\bfseries Zsh Shortcuts}
+
+\vspace{0.2em}
+{\large for macOS}
+
+\vspace{0.2em}
+{\small\itshape Cheat Sheet}
+
+\vspace{0.4em}
+
+\begin{multicols}{3}
+
+\subsection*{Navigation}
+
+\shortcut{\key{Ctrl} + \key{A}}{Jump to line start}
+\shortcut{\key{Ctrl} + \key{E}}{Jump to line end}
+\shortcut{\key{Ctrl} + \key{F}}{Move right}
+\shortcut{\key{Ctrl} + \key{B}}{Move left}
+\shortcut{\key{Esc}, \key{F}}{Next word}
+\shortcut{\key{Esc}, \key{B}}{Previous word}
+\shortcut{\key{Ctrl} + \key{T}}{Swap characters}
+\shortcut{\key{Esc}, \key{T}}{Swap words}
+
+\vspace{0.5em}
+
+\subsection*{Editing}
+
+\shortcut{\key{Ctrl} + \key{U}}{Delete to line start}
+\shortcut{\key{Ctrl} + \key{K}}{Delete to line end}
+\shortcut{\key{Ctrl} + \key{H}}{Delete previous character}
+\shortcut{\key{Ctrl} + \key{W}}{Delete previous word}
+\shortcut{\key{Esc}, \key{Backspace}}{Delete previous word}
+\shortcut{\key{Ctrl} + \key{Y}}{Paste removed text}
+\shortcut{\key{Ctrl} + \key{V}}{Insert literal character}
+\shortcut{\key{Ctrl} + \key{\_}}{Undo last change}
+
+\columnbreak
+
+\subsection*{History}
+
+\shortcut{\key{Ctrl} + \key{P}}{Previous command}
+\shortcut{\key{Ctrl} + \key{N}}{Next command}
+\shortcut{\key{Ctrl} + \key{R}}{Search backward}
+\shortcut{\key{Ctrl} + \key{S}}{Search forward}
+\shortcut{\key{Esc}, \key{P}}{Prefix match backward}
+\shortcut{\key{Esc}, \key{N}}{Prefix match forward}
+\shortcut{\key{Up} / \key{Down}}{Browse history}
+
+\vspace{0.5em}
+
+\subsection*{Process control}
+
+\shortcut{\key{Ctrl} + \key{L}}{Clear terminal}
+\shortcut{\key{Ctrl} + \key{C}}{Stop current process}
+\shortcut{\key{Ctrl} + \key{Z}}{Suspend process}
+\shortcut{\key{Ctrl} + \key{O}}{Run command, keep line}
+\shortcut{\key{Ctrl} + \key{G}}{Send break}
+
+\vspace{0.5em}
+
+\subsection*{Shell helpers}
+
+\shortcut{\texttt{fg}}{Bring job to foreground}
+\shortcut{\texttt{bg}}{Resume job in background}
+\shortcut{\texttt{!!}}{Repeat last command}
+\shortcut{\texttt{!\$}}{Reuse last argument}
+
+\columnbreak
+
+\subsection*{Productivity}
+
+\shortcut{\key{Tab}}{Autocomplete}
+\shortcut{\key{Esc}, \key{.}}{Insert last argument}
+\shortcut{\key{Ctrl} + \key{D}}{Delete current character}
+\shortcut{\key{Esc}, \key{D}}{Delete next word}
+\shortcut{\key{Esc}, \key{Y}}{Cycle pasted text}
+\shortcut{\key{Ctrl} + \key{Q}}{Push line for reuse}
+\shortcut{\key{Ctrl} + \key{J}}{Accept line}
+
+\subsection*{Advanced}
+
+\shortcuttext{Ctrl+X, Ctrl+X}{Swap mark}
+\shortcuttext{Ctrl+X, Ctrl+U}{Undo}
+\shortcuttext{Ctrl+X, Ctrl+V}{vi mode}
+\shortcuttext{Ctrl+X, =}{Cursor info}
+\shortcuttext{Esc, U}{Uppercase word}
+\shortcuttext{Esc, L}{Lowercase word}
+\shortcuttext{Esc, C}{Capitalize word}
+\shortcuttext{Esc, H}{Help}
+\shortcuttext{Esc, ?}{Describe command}
+\end{multicols}
+
+\end{document}
