@@ -6,7 +6,7 @@ I couldn't find a simple and clean reference that worked for me, so I built one 
 
 ## Preview
 
-![preview](zsh-shortcuts.pdf)
+![preview](zsh-shortcuts.png)
 
 ## Download
 
